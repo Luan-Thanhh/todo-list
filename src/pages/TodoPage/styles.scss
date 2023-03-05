@@ -1,0 +1,56 @@
+.todo-page {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 64px;
+
+  button {
+    min-width: 92px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background-color: #ebecf0;
+    text-shadow: 1px 1px 0 #fff;
+    font-family: inherit;
+    font-weight: 600;
+    text-shadow: 1px 1px 0 #fff;
+    font-size: 16px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-3px);
+      text-shadow: 0 1px 2px #f6eeee;
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+    }
+  }
+}
+
+.move-in-top {
+  animation: moveInTop 1s;
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  80% {
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}

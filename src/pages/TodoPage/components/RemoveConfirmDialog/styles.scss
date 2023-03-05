@@ -1,0 +1,41 @@
+.dialog-todo {
+  position: absolute;
+  z-index: 999;
+  width: 550px;
+  padding: 92px 64px;
+  background-color: #e3e5ea;
+  border-radius: 16px;
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.125),
+    -9px -9px 16px rgb(255, 255, 255, 0.125);
+
+  h1 {
+    text-align: center;
+  }
+
+  &__btn {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__btn button {
+    &:first-child {
+      color: #4c5af5 !important;
+      box-shadow: -3px -3px 10px #fff, 3px 3px 10px rgba(#4c5af5, 0.15);
+
+      &:hover {
+        box-shadow: -2px -2px 5px #fff, 2px 2px 5px rgba(#4c5af5, 0.2);
+      }
+    }
+
+    &:last-child {
+      color: #ff4b4b !important;
+      box-shadow: -3px -3px 10px #fff, 3px 3px 10px rgba(#ff4b4b, 0.15);
+
+      &:hover {
+        box-shadow: -2px -2px 5px #fff, 2px 2px 5px rgba(#ff4b4b, 0.2);
+      }
+    }
+  }
+}

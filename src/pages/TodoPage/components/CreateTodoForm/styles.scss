@@ -1,0 +1,115 @@
+.create-todo {
+  position: absolute;
+  z-index: 999;
+  width: 550px;
+  padding: 92px 64px;
+  background-color: #e3e5ea;
+  border-radius: 16px;
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.125),
+    -9px -9px 16px rgb(255, 255, 255, 0.125);
+
+  &__input {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: #ebecf0;
+      font-size: 16px;
+      box-shadow: inset 2px 2px 5px rgba(186, 190, 204, 0.6),
+        inset -2px -2px 5px #fff;
+      text-shadow: 1px 1px 0 #fff;
+      padding: 12px 16px;
+      border-radius: 999px;
+      transition: 0.3s;
+
+      &:focus {
+        box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+        transform: translateY(-3px);
+        outline: none;
+      }
+    }
+
+    small {
+      position: absolute;
+      color: #ff4b4b;
+      left: 16px;
+      bottom: 0;
+      z-index: -1;
+      // opacity: 0;
+      // visibility: hidden;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      animation: error 0.3s forwards;
+    }
+
+    &.error {
+      input {
+        box-shadow: inset 2px 2px 5px rgba(252, 64, 17, 0.4),
+          inset -2px -2px 5px rgba(252, 64, 17, 0.2);
+      }
+
+      small {
+        animation: error 0.3s forwards;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__btn button {
+    &:first-child {
+      color: #4c5af5 !important;
+      box-shadow: -3px -3px 10px #fff, 3px 3px 10px rgba(#4c5af5, 0.15);
+
+      &:hover {
+        box-shadow: -2px -2px 5px #fff, 2px 2px 5px rgba(#4c5af5, 0.2);
+      }
+    }
+
+    &:last-child {
+      color: #ff4b4b !important;
+      box-shadow: -3px -3px 10px #fff, 3px 3px 10px rgba(#ff4b4b, 0.15);
+
+      &:hover {
+        box-shadow: -2px -2px 5px #fff, 2px 2px 5px rgba(#ff4b4b, 0.2);
+      }
+    }
+  }
+}
+
+@keyframes error {
+  to {
+    bottom: -24px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+input[type='datetime-local'] {
+  width: auto;
+  font-size: 24px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+input[type='datetime-local']::-webkit-inner-spin-button,
+input[type='datetime-local']::-webkit-calendar-picker-indicator {
+  /* display: none;
+    -webkit-appearance: none; */
+  margin: 0;
+}
+input[type='datetime-local']::-webkit-datetime-edit {
+  display: none;
+}
